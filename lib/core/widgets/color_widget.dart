@@ -7,4 +7,8 @@ class ColorWidget {
   static const Color whiteColor = Color(0xFFD9EFF2);
   static const Color greyColor = Color(0xFFB1B1B1);
   static const Color iconColor = Color(0xFF6C6C6C);
+  static const Color blackColor = Color(0xFF000000);
+  static const Color redColor = Color(0xFFFF0000);
+  static const Color greenColor = Color(0xFF00F533);
+  static const Color warningColor = Color(0xFFFFDD00);
 }

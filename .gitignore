@@ -39,5 +39,8 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-*/*.freezed.dart
-*/*.g.dart
+*.freezed.dart
+*.g.dart
+*.gr.dart
+pubspec.lock
+gr.dart

@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a id locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,23 +18,22 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'id';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "button_permission":
-            MessageLookupByLibrary.simpleMessage("Give Access"),
+        "button_permission": MessageLookupByLibrary.simpleMessage("Beri Akses"),
         "button_reject_access":
-            MessageLookupByLibrary.simpleMessage("Reject Access"),
-        "general_close": MessageLookupByLibrary.simpleMessage("Close"),
+            MessageLookupByLibrary.simpleMessage("Tolak Akses"),
+        "general_close": MessageLookupByLibrary.simpleMessage("Tutup"),
         "general_coming_soon":
-            MessageLookupByLibrary.simpleMessage("Coming Soon"),
-        "general_confirm": MessageLookupByLibrary.simpleMessage("Confirmation"),
+            MessageLookupByLibrary.simpleMessage("Segera Hadir"),
+        "general_confirm": MessageLookupByLibrary.simpleMessage("Konfirmasi"),
         "general_error":
-            MessageLookupByLibrary.simpleMessage("Something Went Wrong"),
-        "general_no": MessageLookupByLibrary.simpleMessage("No"),
+            MessageLookupByLibrary.simpleMessage("Terjadi Kesalahan"),
+        "general_no": MessageLookupByLibrary.simpleMessage("Tidak"),
         "general_oke_button": MessageLookupByLibrary.simpleMessage("Oke"),
-        "general_save": MessageLookupByLibrary.simpleMessage("Save"),
-        "general_yes": MessageLookupByLibrary.simpleMessage("Yes")
+        "general_save": MessageLookupByLibrary.simpleMessage("Simpan"),
+        "general_yes": MessageLookupByLibrary.simpleMessage("Ya")
       };
 }

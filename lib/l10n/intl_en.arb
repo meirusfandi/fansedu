@@ -1,1 +1,14 @@
-{}
+{
+  "@GENERAL": {},
+  "general_save": "Save",
+  "general_error": "Something Went Wrong",
+  "general_oke_button": "Oke",
+  "general_close": "Close",
+  "general_coming_soon": "Coming Soon",
+  "general_confirm": "Confirmation",
+  "general_yes": "Yes",
+  "general_no": "No",
+  "@_PERMISSION": {},
+  "button_permission": "Give Access",
+  "button_reject_access": "Reject Access"
+}

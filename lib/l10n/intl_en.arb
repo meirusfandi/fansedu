@@ -8,6 +8,7 @@
   "general_confirm": "Confirmation",
   "general_yes": "Yes",
   "general_no": "No",
+  "general_app_version": "Version: {app_version}",
   "@_PERMISSION": {},
   "button_permission": "Give Access",
   "button_reject_access": "Reject Access"

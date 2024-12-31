@@ -19,26 +19,13 @@ class FlavorConfig {
   final MaterialColor color;
   final FlavorValues values;
   final String server;
-  final String webviewServer;
-  final String webApiServer;
-  final String aqiServer;
-  final String aqiAirServer;
-  final String dlhAqiAirServer;
-  final String portalSharingURL;
-
   static FlavorConfig? _instance;
 
   FlavorConfig(
       {this.flavor = FlavorType.dev,
       this.color = Colors.orange,
       this.values = const FlavorValues(),
-      this.server = '',
-      this.webApiServer = '',
-      this.webviewServer = '',
-      this.aqiAirServer = '',
-      this.aqiServer = '',
-      this.dlhAqiAirServer = '',
-      this.portalSharingURL = ''}) {
+      this.server = ''}) {
     _instance = this;
   }
 

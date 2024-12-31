@@ -1,4 +1,4 @@
-package com.meirusfandi.fansedu.fansedu
+package com.meirusfandi.fansedu
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "874639475682",
+    "project_id": "fansedu-mobile",
+    "storage_bucket": "fansedu-mobile.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874639475682:android:cfe303304f8903ab2befbb",
+        "android_client_info": {
+          "package_name": "com.meirusfandi.fansedu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc2Dva63FEDHFIVfz0WP1_UBiYpnejiyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874639475682:android:cf435b494a8f1e382befbb",
+        "android_client_info": {
+          "package_name": "com.meirusfandi.fansedu.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc2Dva63FEDHFIVfz0WP1_UBiYpnejiyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

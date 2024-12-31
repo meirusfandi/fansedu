@@ -130,6 +130,16 @@ class S {
     );
   }
 
+  /// `Version: {app_version}`
+  String general_app_version(Object app_version) {
+    return Intl.message(
+      'Version: $app_version',
+      name: 'general_app_version',
+      desc: '',
+      args: [app_version],
+    );
+  }
+
   /// `Give Access`
   String get button_permission {
     return Intl.message(

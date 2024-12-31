@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:fansedu/core/common/package_info_data.dart';
 import 'package:fansedu/core/routes/router.dart';
@@ -36,6 +38,7 @@ class _SplashPageState extends State<SplashPage> with SingleTickerProviderStateM
 
   @override
   Widget build(BuildContext context) {
+    log('till splash screen');
     return Scaffold(
       body: SafeArea(
           child: Stack(

@@ -18,7 +18,7 @@ void main() async {
   await initPlatformState();
 
   FlavorConfig(
-    flavor: FlavorType.prod,
+    flavor: FlavorType.dev,
     color: Colors.teal,
     server: serverDev,
     values: const FlavorValues(

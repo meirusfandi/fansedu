@@ -7,6 +7,7 @@ import 'package:fansedu/core/flavor/flavor_config.dart';
 import 'package:fansedu/core/helpers/prefs/pref_helpers.dart';
 import 'package:fansedu/core/helpers/prefs/prefs_key_helpers.dart';
 import 'package:fansedu/core/routes/router.dart';
+import 'package:fansedu/features/auth/bloc/login_bloc.dart';
 import 'package:fansedu/generated/l10n.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -17,11 +18,12 @@ import 'package:keyboard_dismisser/keyboard_dismisser.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fansedu/core/resources/injection_container.dart' as injector;
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   prefInstance = await SharedPreferences.getInstance();
-  await Firebase.initializeApp();
   // await FirebaseMessagingHelpers().initNotification();
   await initPlatformState();
 
@@ -42,7 +44,6 @@ void main() async {
   // injector.sl<RemoteConfigHelper>().initFirebase();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((value) => runApp(const MyApp()));
-  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -105,8 +106,8 @@ class _MyAppState extends State<MyApp> {
     }
     // sl<NotificationHelper>().initialize(_appRouter.navigatorKey);
     return MultiBlocProvider(providers: [
-      // BlocProvider<LoginBloc>(
-      //     create: (BuildContext context) => sl<LoginBloc>()),
+      BlocProvider<LoginBloc>(
+          create: (BuildContext context) => injector.sl<LoginBloc>()),
     ], child: app);
   }
 }

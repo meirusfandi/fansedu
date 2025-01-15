@@ -2,6 +2,12 @@ import 'package:dio/dio.dart';
 import 'package:fansedu/core/config/bloc/config_bloc.dart';
 import 'package:fansedu/core/flavor/flavor_config.dart';
 import 'package:fansedu/core/resources/data_interceptor.dart';
+import 'package:fansedu/data/datasource/fansedu_datasource.dart';
+import 'package:fansedu/data/datasource/fansedu_datasource_impl.dart';
+import 'package:fansedu/data/repositories/fansedu_repository_impl.dart';
+import 'package:fansedu/domain/repository/fansedu_repository.dart';
+import 'package:fansedu/domain/usecase/do_login.dart';
+import 'package:fansedu/features/auth/bloc/login_bloc.dart';
 import 'package:fansedu/generated/l10n.dart';
 import 'package:alice/alice.dart';
 import 'package:flutter/services.dart';
@@ -41,14 +47,14 @@ Future<void> init() async {
   // sl.registerLazySingleton(() => RemoteConfigHelper());
 
   // datasource
-  // sl.registerLazySingleton<LoginDatasource>(() => LoginDatasourceImpl(sl()));
+  sl.registerLazySingleton<FanseduDatasource>(() => FanseduDatasourceImpl(sl()));
 
   // repository
-  // sl.registerLazySingleton<LoginRepository>(() => LoginRepositoryImpl(sl()));
+  sl.registerLazySingleton<FanseduRepository>(() => FanseduRepositoryImpl(sl()));
 
   // usecase
-  // sl.registerLazySingleton(() => DoLogin(sl()));
+  sl.registerLazySingleton(() => DoLogin(sl()));
 
   // bloc
-  // sl.registerLazySingleton(() => LoginBloc(doLogin: sl()));
+  sl.registerLazySingleton(() => LoginBloc(doLogin: sl()));
 }

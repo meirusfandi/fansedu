@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:fansedu/core/config/helpers/lang_config.dart';
+import 'package:fansedu/data/model/response/login_response.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'rest_client.g.dart';
@@ -16,7 +17,6 @@ abstract class RestClient {
     return _RestClient(dio, baseUrl: baseUrl);
   }
 
-  // auth service
-  // @POST('auth/login')
-  // Future<LoginResponse> doLogin(@Body() String request);
+  @POST('auth/login')
+  Future<LoginResponse> doLogin(@Body() String request);
 }

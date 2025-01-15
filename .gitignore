@@ -44,3 +44,5 @@ app.*.map.json
 *.gr.dart
 pubspec.lock
 gr.dart
+
+.codegpt

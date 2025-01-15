@@ -1,4 +1,6 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:fansedu/core/routes/router.dart';
 import 'package:fansedu/core/widgets/color_widget.dart';
 import 'package:fansedu/core/widgets/container_widget.dart';
 import 'package:fansedu/core/widgets/text_widget.dart';
@@ -58,7 +60,7 @@ class _DashboardPageState extends State<DashboardPage> {
         elevation: 0.0,
         actions: [
           GestureDetector(
-            onTap: () {},
+            onTap: () => context.pushRoute(NotificationRoute()),
             child: SvgPicture.asset(getSourceBySvg('ic_notification'), width: 24, height: 24),
           ).rightPadded(24)
         ],

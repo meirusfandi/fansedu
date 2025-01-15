@@ -49,6 +49,116 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Save`
+  String get general_save {
+    return Intl.message(
+      'Save',
+      name: 'general_save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something Went Wrong`
+  String get general_error {
+    return Intl.message(
+      'Something Went Wrong',
+      name: 'general_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Oke`
+  String get general_oke_button {
+    return Intl.message(
+      'Oke',
+      name: 'general_oke_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Close`
+  String get general_close {
+    return Intl.message(
+      'Close',
+      name: 'general_close',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Coming Soon`
+  String get general_coming_soon {
+    return Intl.message(
+      'Coming Soon',
+      name: 'general_coming_soon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirmation`
+  String get general_confirm {
+    return Intl.message(
+      'Confirmation',
+      name: 'general_confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes`
+  String get general_yes {
+    return Intl.message(
+      'Yes',
+      name: 'general_yes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No`
+  String get general_no {
+    return Intl.message(
+      'No',
+      name: 'general_no',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Version: {app_version}`
+  String general_app_version(Object app_version) {
+    return Intl.message(
+      'Version: $app_version',
+      name: 'general_app_version',
+      desc: '',
+      args: [app_version],
+    );
+  }
+
+  /// `Give Access`
+  String get button_permission {
+    return Intl.message(
+      'Give Access',
+      name: 'button_permission',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reject Access`
+  String get button_reject_access {
+    return Intl.message(
+      'Reject Access',
+      name: 'button_reject_access',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -57,6 +167,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'id'),
     ];
   }
 

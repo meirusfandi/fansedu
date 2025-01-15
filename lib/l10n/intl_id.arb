@@ -1,0 +1,15 @@
+{
+  "@GENERAL": {},
+  "general_save": "Simpan",
+  "general_error": "Terjadi Kesalahan",
+  "general_oke_button": "Oke",
+  "general_close": "Tutup",
+  "general_coming_soon": "Segera Hadir",
+  "general_confirm": "Konfirmasi",
+  "general_yes": "Ya",
+  "general_no": "Tidak",
+  "general_app_version": "Versi: {app_version}",
+  "@_PERMISSION": {},
+  "button_permission": "Beri Akses",
+  "button_reject_access": "Tolak Akses"
+}

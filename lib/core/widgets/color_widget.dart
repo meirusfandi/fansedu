@@ -11,4 +11,5 @@ class ColorWidget {
   static const Color redColor = Color(0xFFFF0000);
   static const Color greenColor = Color(0xFF00F533);
   static const Color warningColor = Color(0xFFFFDD00);
+  static const Color backgroundColor = Color(0xFFD9D9D9);
 }

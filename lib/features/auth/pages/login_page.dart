@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   ActionButtonWidget(
                       title: "SIGN IN",
-                      onTap: () {},
+                      onTap: () => context.router.replaceAll([HomeRoute()]),
                       isActive: true
                   ).horizontalPadded(24).topPadded()
                 ]

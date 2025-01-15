@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:fansedu/core/constants/constants.dart';
-import 'package:fansedu/core/routes/router.dart';
 import 'package:fansedu/core/widgets/action_button_widget.dart';
 import 'package:fansedu/core/widgets/color_widget.dart';
 import 'package:fansedu/core/widgets/container_widget.dart';

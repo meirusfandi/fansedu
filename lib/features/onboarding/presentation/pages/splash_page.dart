@@ -31,7 +31,7 @@ class _SplashPageState extends State<SplashPage> with SingleTickerProviderStateM
   }
 
   Future<void> initialProcess() async {
-    context.router.replaceAll([LoginRoute()]);
+    context.router.replaceAll([OnboardingRoute()]);
   }
 
   @override

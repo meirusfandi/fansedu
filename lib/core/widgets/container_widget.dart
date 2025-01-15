@@ -1030,7 +1030,7 @@ class BackAppBar extends AppBar {
         : const AutoLeadingButton(
         color: Color.fromARGB(255, 0, 53, 119))
         : null,
-    title: TextWidget.jakartaSansBold(text, size: 18, color: ColorWidget.blackColor),
+    title: TextWidget.jakartaSansBold(text, size: 21, color: ColorWidget.primaryColor),
   );
 }
 

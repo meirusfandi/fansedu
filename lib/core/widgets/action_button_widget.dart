@@ -18,8 +18,9 @@ class ActionButtonWidget extends StatelessWidget {
         onTap: onTap,
         child: Container(
           decoration: BoxDecoration(
-            color: (isActive) ? ColorWidget.primaryColor : ColorWidget.greyColor,
-            borderRadius: BorderRadius.all(Radius.circular(6.0))
+            color: (isActive) ? ColorWidget.primaryColor : Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(6.0)),
+            border: Border.all(color: ColorWidget.primaryColor)
           ),
           child: TextWidget.jakartaSansSemiBold(title, size: 16, textAlign: TextAlign.center, color: (isActive) ? ColorWidget.whiteColor : ColorWidget.blackColor).padded(),
         ),

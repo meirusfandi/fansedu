@@ -49,6 +49,6 @@ DeviceInfoItem _readIosDeviceInfo(IosDeviceInfo data) {
     deviceId: data.identifierForVendor,
     brand: 'apple',
     osType: data.systemName,
-    osVersion: data.systemVersion ?? '',
+    osVersion: data.systemVersion,
   );
 }

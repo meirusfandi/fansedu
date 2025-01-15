@@ -18,14 +18,15 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final TextEditingController _emailController = new TextEditingController();
-  final TextEditingController _passwordController = new TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   bool seePassword = false;
 
   @override
   Widget build(BuildContext context) {
     return Loadable(
+      backgroundColor: Colors.white,
       child: SafeArea(
         child: Stack(
           children: [
@@ -75,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                   ).horizontalPadded(24).topPadded()
                 ]
               ),
-            ),
+            ).bottomPadded(32),
             Positioned(
               bottom: 20,
               left: 32,

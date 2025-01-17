@@ -10,10 +10,9 @@ class LoginEvent extends Equatable {
 class ProcessLoginEvent extends LoginEvent {
   final String email;
   final String password;
-  final String fcmToken;
 
-  const ProcessLoginEvent({required this.email, required this.password, required this.fcmToken});
+  const ProcessLoginEvent({required this.email, required this.password});
 
   @override
-  List<Object?> get props => [email, password, fcmToken];
+  List<Object?> get props => [email, password];
 }

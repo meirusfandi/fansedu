@@ -1,0 +1,20 @@
+enum RemoteConfigKey {
+  banner_menu,
+  instagram_menu,
+  category_news,
+  download_menu,
+  event_menu,
+  favorite_menu,
+  header_menu,
+  home_menu,
+  latest_news,
+  list_news_menu,
+  maps_menu,
+  profile_menu,
+  force_update_enable,
+  latest_version,
+  force_logout,
+  show_pop_up_update,
+  forceupdate_version,
+  rnd_menu
+}

@@ -15,7 +15,18 @@ class DoLogin implements UseCase<LoginEntity, LoginParams> {
     final result = await repository.doLogin(params);
     return result.fold((l) => Left(l), (r) {
       return Right(
-        LoginEntity(success: r.success ?? false, message: r.message ?? '', code: r.code ?? 0)
+        LoginEntity(
+          success: r.success ?? false,
+          message: r.message ?? '',
+          code: r.code ?? 0,
+          data: DataLoginEntity(
+            token: r.data?.token ?? '',
+            expired_at: r.data?.expired_at ?? '',
+            user_id: r.data?.user_id ?? '',
+            email: r.data?.email ?? '',
+            full_name: r.data?.full_name ?? ''
+          )
+        )
       );
     });
   }

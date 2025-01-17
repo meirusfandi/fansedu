@@ -15,10 +15,34 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    AboutRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AboutPage(),
+      );
+    },
     ChatRoomRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const ChatRoomPage(),
+      );
+    },
+    ClassRoomDetailRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ClassRoomDetailPage(),
+      );
+    },
+    ClassRoomEnrollRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ClassRoomEnrollPage(),
+      );
+    },
+    ClassRoomListRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ClassRoomListPage(),
       );
     },
     DashboardRoute.name: (routeData) {
@@ -51,6 +75,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const OnboardingPage(),
       );
     },
+    PrivacyPolicyRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const PrivacyPolicyPage(),
+      );
+    },
     ProfileRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -75,7 +105,27 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const SplashPage(),
       );
     },
+    TncRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TncPage(),
+      );
+    },
   };
+}
+
+/// generated route for
+/// [AboutPage]
+class AboutRoute extends PageRouteInfo<void> {
+  const AboutRoute({List<PageRouteInfo>? children})
+      : super(
+          AboutRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AboutRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -88,6 +138,48 @@ class ChatRoomRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'ChatRoomRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ClassRoomDetailPage]
+class ClassRoomDetailRoute extends PageRouteInfo<void> {
+  const ClassRoomDetailRoute({List<PageRouteInfo>? children})
+      : super(
+          ClassRoomDetailRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ClassRoomDetailRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ClassRoomEnrollPage]
+class ClassRoomEnrollRoute extends PageRouteInfo<void> {
+  const ClassRoomEnrollRoute({List<PageRouteInfo>? children})
+      : super(
+          ClassRoomEnrollRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ClassRoomEnrollRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ClassRoomListPage]
+class ClassRoomListRoute extends PageRouteInfo<void> {
+  const ClassRoomListRoute({List<PageRouteInfo>? children})
+      : super(
+          ClassRoomListRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ClassRoomListRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -163,6 +255,20 @@ class OnboardingRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [PrivacyPolicyPage]
+class PrivacyPolicyRoute extends PageRouteInfo<void> {
+  const PrivacyPolicyRoute({List<PageRouteInfo>? children})
+      : super(
+          PrivacyPolicyRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'PrivacyPolicyRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [ProfilePage]
 class ProfileRoute extends PageRouteInfo<void> {
   const ProfileRoute({List<PageRouteInfo>? children})
@@ -214,6 +320,20 @@ class SplashRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'SplashRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [TncPage]
+class TncRoute extends PageRouteInfo<void> {
+  const TncRoute({List<PageRouteInfo>? children})
+      : super(
+          TncRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TncRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

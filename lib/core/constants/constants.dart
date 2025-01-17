@@ -1,5 +1,5 @@
-const String serverProd = 'https://fansedu.meirusfandi.com/api/v1';
-const String serverDev = 'https://dev.fansedu.meirusfandi.com/api/v1';
+const String serverProd = 'https://fansedu.meirusfandi.com/api/v1/';
+const String serverDev = 'https://fansedu.meirusfandi.com/api/v1/';
 
 enum TextFieldType {
   text,
@@ -15,3 +15,7 @@ enum TextFieldType {
 }
 
 enum TextFieldBorderType { filled, outlined }
+
+enum AnalyticEventType {
+  homepage_viewed,
+}

@@ -3,19 +3,19 @@ import 'package:fansedu/core/widgets/container_widget.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
-class ClassRoomDetailPage extends StatefulWidget {
-  const ClassRoomDetailPage({super.key});
+class TncPage extends StatefulWidget {
+  const TncPage({super.key});
 
   @override
-  State<StatefulWidget> createState() => _ClassRoomDetailPageState();
+  State<StatefulWidget> createState() => _TncPageState();
 }
 
-class _ClassRoomDetailPageState extends State<ClassRoomDetailPage> {
+class _TncPageState extends State<TncPage> {
   @override
   Widget build(BuildContext context) {
     return Loadable(
       backgroundColor: Colors.white,
-      appBar: BackAppBar(context, "Class Room Detail", elevation: 0.0, backgroundColor: Colors.white,),
+      appBar: BackAppBar(context, "TnC", elevation: 0.0, backgroundColor: Colors.white,),
       child: SafeArea(child: SingleChildScrollView()),
     );
   }

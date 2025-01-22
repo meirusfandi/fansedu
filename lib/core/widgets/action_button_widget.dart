@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class ActionButtonWidget extends StatelessWidget {
   final String title;
-  final Function() onTap;
+  final Function()? onTap;
   final bool isActive;
 
   const ActionButtonWidget({super.key, required this.title, required this.onTap, required this.isActive});

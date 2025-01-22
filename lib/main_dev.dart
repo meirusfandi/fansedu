@@ -1,6 +1,8 @@
 import 'package:fansedu/core/common/device_info_data.dart';
 import 'package:fansedu/core/constants/constants.dart';
 import 'package:fansedu/core/flavor/flavor_config.dart';
+import 'package:fansedu/core/helpers/firebase/firebase_messsaging_helper.dart';
+import 'package:fansedu/core/helpers/firebase/remote_config.dart';
 import 'package:fansedu/core/helpers/prefs/pref_helpers.dart';
 import 'firebase_options.dart';
 import 'package:fansedu/main.dart';
@@ -14,7 +16,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   prefInstance = await SharedPreferences.getInstance();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  // await FirebaseMessagingHelpers().initNotification();
+  await FirebaseMessagingHelpers().initNotification();
   await initPlatformState();
 
   FlavorConfig(
@@ -31,7 +33,7 @@ void main() async {
 
   // FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
   // FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
-  // injector.sl<RemoteConfigHelper>().initFirebase();
+  injector.sl<RemoteConfigHelper>().initFirebase();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((value) => runApp(const MyApp()));
 }

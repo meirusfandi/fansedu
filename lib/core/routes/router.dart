@@ -24,7 +24,6 @@ import 'package:fansedu/features/profile/pages/delete_account_page.dart';
 import 'package:fansedu/features/profile/pages/edit_profile_page.dart';
 import 'package:fansedu/features/profile/pages/profile_page.dart';
 import 'package:fansedu/features/profile/pages/security_page.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 part 'router.gr.dart';
 

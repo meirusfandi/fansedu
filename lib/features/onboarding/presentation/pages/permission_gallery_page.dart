@@ -1,11 +1,9 @@
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:fansedu/core/helpers/permission_helper.dart';
 import 'package:fansedu/core/helpers/prefs/pref_helpers.dart';
 import 'package:fansedu/core/helpers/prefs/prefs_key_helpers.dart';
 import 'package:fansedu/core/helpers/secure_storage/storage_helpers.dart';
 import 'package:fansedu/core/routes/router.dart';
-import 'package:fansedu/core/widgets/container_widget.dart';
 import 'package:fansedu/features/onboarding/presentation/widgets/permission_widget.dart';
 import 'package:flutter/material.dart';
 

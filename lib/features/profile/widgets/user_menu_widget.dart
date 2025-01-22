@@ -18,7 +18,7 @@ class UserMenuWidget extends StatelessWidget {
       onTap: onTap,
       child: LeftAlignedRow(
         children: [
-          SvgPicture.asset(getSourceBySvg(iconLeading), width: 24, height: 24).rightPadded(),
+          SvgPicture.asset(getSourceBySvg(iconLeading), width: 24, height: 24, color: ColorWidget.primaryColor).rightPadded(),
           Expanded(
             child: TextWidget.jakartaSansSemiBold(title, size: 16, color: ColorWidget.primaryColor)
           ),

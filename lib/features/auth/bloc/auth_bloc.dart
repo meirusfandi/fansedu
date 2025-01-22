@@ -1,26 +1,28 @@
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 import 'package:fansedu/core/failure/failure.dart';
+import 'package:fansedu/core/helpers/firebase/firebase_messsaging_helper.dart';
 import 'package:fansedu/core/helpers/secure_storage/storage_helpers.dart';
 import 'package:fansedu/core/helpers/secure_storage/storage_key_helper.dart';
 import 'package:fansedu/domain/entity/login_entity.dart';
 import 'package:fansedu/domain/usecase/do_login.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-part '../state/login_state.dart';
-part '../event/login_event.dart';
+part '../state/auth_state.dart';
+part '../event/auth_event.dart';
 
-class LoginBloc extends Bloc<LoginEvent, LoginState> {
+class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final DoLogin doLogin;
-  LoginBloc({required this.doLogin}) : super(const LoginState()) {
+  AuthBloc({required this.doLogin}) : super(const AuthState()) {
     on<ProcessLoginEvent>(_doLogin);
   }
 
-  Future<void> _doLogin(ProcessLoginEvent event, Emitter<LoginState> emit) async {
+  Future<void> _doLogin(ProcessLoginEvent event, Emitter<AuthState> emit) async {
     try {
-      emit(const LoginState.noValue());
+      final fcmToken = await FirebaseMessagingHelpers().getFcmToken();
+      emit(const AuthState.noValue());
       final result = await doLogin(LoginParams(
-          email: event.email, password: event.password, fcmToken: "firebase_token"));
+          email: event.email, password: event.password, fcmToken: fcmToken));
       result.fold((l) {
         final rest = l as LoginFailure;
         emit(state.copyWith(

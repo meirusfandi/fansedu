@@ -3,8 +3,6 @@ import 'package:alice/alice.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:fansedu/core/config/helpers/lang_config.dart';
 import 'package:fansedu/core/config/model/payload_notif.dart';
-import 'package:fansedu/core/helpers/prefs/pref_helpers.dart';
-import 'package:fansedu/core/helpers/prefs/prefs_key_helpers.dart';
 import 'package:fansedu/core/helpers/secure_storage/storage_helpers.dart';
 import 'package:fansedu/core/resources/injection_container.dart';
 import 'package:fansedu/core/routes/router.dart';

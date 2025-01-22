@@ -1,21 +1,21 @@
-part of '../bloc/login_bloc.dart';
+part of '../bloc/auth_bloc.dart';
 
-class LoginState extends Equatable {
+class AuthState extends Equatable {
   final LoginEntity? loginEntity;
   final String errorMessage;
   final bool isLoading;
 
-  const LoginState(
+  const AuthState(
       {this.loginEntity, this.errorMessage = '', this.isLoading = false});
 
-  const LoginState.noValue()
+  const AuthState.noValue()
       : loginEntity = null,
         isLoading = true,
         errorMessage = '';
 
-  LoginState copyWith(
+  AuthState copyWith(
       {LoginEntity? loginEntity, bool? isLoading, String? errorMessage}) {
-    return LoginState(
+    return AuthState(
         loginEntity: loginEntity ?? this.loginEntity,
         isLoading: isLoading ?? this.isLoading,
         errorMessage: errorMessage ?? this.errorMessage);

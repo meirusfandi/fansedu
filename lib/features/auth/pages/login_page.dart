@@ -7,7 +7,7 @@ import 'package:fansedu/core/widgets/color_widget.dart';
 import 'package:fansedu/core/widgets/container_widget.dart';
 import 'package:fansedu/core/widgets/text_form_widget.dart';
 import 'package:fansedu/core/widgets/text_widget.dart';
-import 'package:fansedu/features/auth/bloc/login_bloc.dart';
+import 'package:fansedu/features/auth/bloc/auth_bloc.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -32,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<LoginBloc, LoginState>(
+    return BlocConsumer<AuthBloc, AuthState>(
       listener: (context, state) {
         if (!state.isLoading && state.loginEntity != null) {
           if (state.loginEntity?.success ?? false) {
@@ -123,7 +123,7 @@ class _LoginPageState extends State<LoginPage> {
                   ActionButtonWidget(
                       title: "SIGN IN",
                       onTap: (checkCondition()) ? () {
-                        sl<LoginBloc>().add(ProcessLoginEvent(email: _emailController.text.trim(), password: _passwordController.text.trim()));
+                        sl<AuthBloc>().add(ProcessLoginEvent(email: _emailController.text.trim(), password: _passwordController.text.trim()));
                       } : null,
                       isActive: checkCondition()
                   ).horizontalPadded(24).topPadded()

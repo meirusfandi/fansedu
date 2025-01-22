@@ -21,6 +21,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const AboutPage(),
       );
     },
+    ChangePasswordRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ChangePasswordPage(),
+      );
+    },
     ChatRoomRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -51,6 +57,30 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const DashboardPage(),
       );
     },
+    DeleteAccountRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const DeleteAccountPage(),
+      );
+    },
+    EditProfileRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const EditProfilePage(),
+      );
+    },
+    ForceUpdateRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ForceUpdatePage(),
+      );
+    },
+    HelpCenterRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const HelpCenterPage(),
+      );
+    },
     HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -75,6 +105,24 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const OnboardingPage(),
       );
     },
+    PermissionCameraRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const PermissionCameraPage(),
+      );
+    },
+    PermissionGalleryRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const PermissionGalleryPage(),
+      );
+    },
+    PermissionNotificationRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const PermissionNotificationPage(),
+      );
+    },
     PrivacyPolicyRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -97,6 +145,12 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const ResetPasswordPage(),
+      );
+    },
+    SecurityRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SecurityPage(),
       );
     },
     SplashRoute.name: (routeData) {
@@ -124,6 +178,20 @@ class AboutRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'AboutRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ChangePasswordPage]
+class ChangePasswordRoute extends PageRouteInfo<void> {
+  const ChangePasswordRoute({List<PageRouteInfo>? children})
+      : super(
+          ChangePasswordRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ChangePasswordRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -199,6 +267,62 @@ class DashboardRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [DeleteAccountPage]
+class DeleteAccountRoute extends PageRouteInfo<void> {
+  const DeleteAccountRoute({List<PageRouteInfo>? children})
+      : super(
+          DeleteAccountRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'DeleteAccountRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [EditProfilePage]
+class EditProfileRoute extends PageRouteInfo<void> {
+  const EditProfileRoute({List<PageRouteInfo>? children})
+      : super(
+          EditProfileRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'EditProfileRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ForceUpdatePage]
+class ForceUpdateRoute extends PageRouteInfo<void> {
+  const ForceUpdateRoute({List<PageRouteInfo>? children})
+      : super(
+          ForceUpdateRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ForceUpdateRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [HelpCenterPage]
+class HelpCenterRoute extends PageRouteInfo<void> {
+  const HelpCenterRoute({List<PageRouteInfo>? children})
+      : super(
+          HelpCenterRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HelpCenterRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [HomePage]
 class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute({List<PageRouteInfo>? children})
@@ -255,6 +379,48 @@ class OnboardingRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [PermissionCameraPage]
+class PermissionCameraRoute extends PageRouteInfo<void> {
+  const PermissionCameraRoute({List<PageRouteInfo>? children})
+      : super(
+          PermissionCameraRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'PermissionCameraRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [PermissionGalleryPage]
+class PermissionGalleryRoute extends PageRouteInfo<void> {
+  const PermissionGalleryRoute({List<PageRouteInfo>? children})
+      : super(
+          PermissionGalleryRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'PermissionGalleryRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [PermissionNotificationPage]
+class PermissionNotificationRoute extends PageRouteInfo<void> {
+  const PermissionNotificationRoute({List<PageRouteInfo>? children})
+      : super(
+          PermissionNotificationRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'PermissionNotificationRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [PrivacyPolicyPage]
 class PrivacyPolicyRoute extends PageRouteInfo<void> {
   const PrivacyPolicyRoute({List<PageRouteInfo>? children})
@@ -306,6 +472,20 @@ class ResetPasswordRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'ResetPasswordRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SecurityPage]
+class SecurityRoute extends PageRouteInfo<void> {
+  const SecurityRoute({List<PageRouteInfo>? children})
+      : super(
+          SecurityRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SecurityRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

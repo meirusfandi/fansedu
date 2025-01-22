@@ -12,7 +12,12 @@ import 'package:fansedu/data/datasource/fansedu_datasource_impl.dart';
 import 'package:fansedu/data/repositories/fansedu_repository_impl.dart';
 import 'package:fansedu/domain/repository/fansedu_repository.dart';
 import 'package:fansedu/domain/usecase/do_login.dart';
-import 'package:fansedu/features/auth/bloc/login_bloc.dart';
+import 'package:fansedu/domain/usecase/do_logout.dart';
+import 'package:fansedu/domain/usecase/do_register.dart';
+import 'package:fansedu/domain/usecase/do_reset_password.dart';
+import 'package:fansedu/domain/usecase/get_profile.dart';
+import 'package:fansedu/features/auth/bloc/auth_bloc.dart';
+import 'package:fansedu/features/profile/bloc/profile_bloc.dart';
 import 'package:fansedu/generated/l10n.dart';
 import 'package:alice/alice.dart';
 import 'package:flutter/services.dart';
@@ -34,8 +39,7 @@ Future<void> init() async {
   }
 
   final Dio dio = createDio();
-  final FlutterLocalNotificationsPlugin notificationsPlugins =
-  FlutterLocalNotificationsPlugin();
+  final FlutterLocalNotificationsPlugin notificationsPlugins = FlutterLocalNotificationsPlugin();
   if (FlavorConfig.instance.flavor != FlavorType.prod) {
     Alice alice = Alice();
     AliceDioAdapter aliceDioAdapter = AliceDioAdapter();
@@ -61,7 +65,12 @@ Future<void> init() async {
 
   // usecase
   sl.registerLazySingleton(() => DoLogin(sl()));
+  sl.registerLazySingleton(() => DoRegister(sl()));
+  sl.registerLazySingleton(() => DoResetPassword(sl()));
+  sl.registerLazySingleton(() => DoLogout(sl()));
+  sl.registerLazySingleton(() => GetProfile(sl()));
 
   // bloc
-  sl.registerLazySingleton(() => LoginBloc(doLogin: sl()));
+  sl.registerLazySingleton(() => AuthBloc(doLogin: sl()));
+  sl.registerLazySingleton(() => ProfileBloc(getProfile: sl()));
 }

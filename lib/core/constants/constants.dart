@@ -1,5 +1,7 @@
 const String serverProd = 'https://fansedu.meirusfandi.com/api/v1/';
 const String serverDev = 'https://fansedu.meirusfandi.com/api/v1/';
+const String imagesDev = 'https://fansedu.meirusfandi.com/images/';
+const String imagesProd = 'https://fansedu.meirusfandi.com/images/';
 
 enum TextFieldType {
   text,

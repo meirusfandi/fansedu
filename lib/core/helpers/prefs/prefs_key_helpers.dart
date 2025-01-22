@@ -2,5 +2,9 @@ enum PrefsKey {
   savedAppVersion,
   dateUpdateAppears,
   appLang,
-  isFirstAccess
+  isFirstAccess,
+  isGalleryAllow,
+  isCameraAllow,
+  isNotificationAllow,
+  isStorageAllow,
 }

@@ -22,3 +22,11 @@ class RegisterFailure extends Failure {
 
   RegisterFailure({this.exception, this.otherException, this.errorResponse});
 }
+
+class ProfileFailure extends Failure {
+  final DioException? exception;
+  final String? otherException;
+  final ErrorResponse? errorResponse;
+
+  ProfileFailure({this.exception, this.otherException, this.errorResponse});
+}

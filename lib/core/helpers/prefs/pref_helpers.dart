@@ -10,6 +10,10 @@ class PrefHelpers {
       prefInstance.getString(PrefsKey.dateUpdateAppears.name);
   String? get getAppLang => prefInstance.getString(PrefsKey.appLang.name);
   bool? get getFirstAccess => prefInstance.getBool(PrefsKey.isFirstAccess.name);
+  String? get getPermissionNotification => prefInstance.getString(PrefsKey.isNotificationAllow.name);
+  String? get getPermissionGallery => prefInstance.getString(PrefsKey.isGalleryAllow.name);
+  String? get getPermissionCamera => prefInstance.getString(PrefsKey.isCameraAllow.name);
+  String? get getPermissionStorage => prefInstance.getString(PrefsKey.isStorageAllow.name);
 }
 
 final prefHelpers = PrefHelpers();

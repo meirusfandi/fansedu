@@ -5,11 +5,13 @@ import 'package:fansedu/core/config/bloc/config_bloc.dart';
 import 'package:fansedu/core/constants/constants.dart';
 import 'package:fansedu/core/flavor/flavor_config.dart';
 import 'package:fansedu/core/helpers/firebase/firebase_messsaging_helper.dart';
+import 'package:fansedu/core/helpers/firebase/notification_helper.dart';
 import 'package:fansedu/core/helpers/firebase/remote_config.dart';
 import 'package:fansedu/core/helpers/prefs/pref_helpers.dart';
 import 'package:fansedu/core/helpers/prefs/prefs_key_helpers.dart';
 import 'package:fansedu/core/routes/router.dart';
-import 'package:fansedu/features/auth/bloc/login_bloc.dart';
+import 'package:fansedu/features/auth/bloc/auth_bloc.dart';
+import 'package:fansedu/features/profile/bloc/profile_bloc.dart';
 import 'package:fansedu/generated/l10n.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -106,10 +108,11 @@ class _MyAppState extends State<MyApp> {
       var alice = injector.sl<Alice>();
       alice.setNavigatorKey(_appRouter.navigatorKey);
     }
-    // sl<NotificationHelper>().initialize(_appRouter.navigatorKey);
+    injector.sl<NotificationHelper>().initialize(_appRouter.navigatorKey);
     return MultiBlocProvider(providers: [
-      BlocProvider<LoginBloc>(
-          create: (BuildContext context) => injector.sl<LoginBloc>()),
+      BlocProvider<AuthBloc>(
+          create: (BuildContext context) => injector.sl<AuthBloc>()),
+      BlocProvider<ProfileBloc>(create: (BuildContext context) => injector.sl<ProfileBloc>())
     ], child: app);
   }
 }

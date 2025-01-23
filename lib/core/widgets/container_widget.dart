@@ -673,8 +673,7 @@ class BottomDrawerWithoutPadding extends StatelessWidget {
       ),
       _main(),
     ],
-  )
-      : _main();
+  ) : _main();
 
   Widget _main() => SingleChildScrollView(
     physics: const NeverScrollableScrollPhysics(),
@@ -686,7 +685,6 @@ class BottomDrawerWithoutPadding extends StatelessWidget {
         ),
         color: Colors.white,
       ),
-      // padding: const EdgeInsets.fromLTRB(16, 24, 16, 16),
       child: child,
     ),
   );
@@ -1412,7 +1410,7 @@ Future<void> showError(BuildContext context, String message) async {
 
 Future<void> showSuccess(BuildContext context, String message) async {
   await showGenericSnackBar(
-      context, message, Icons.check_circle, ColorWidget.greenColor);
+      context, message, Icons.check_circle, ColorWidget.secondaryColor);
 }
 
 Future<void> showWarning(BuildContext context, String message) async {

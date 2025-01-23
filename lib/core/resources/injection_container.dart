@@ -11,13 +11,19 @@ import 'package:fansedu/data/datasource/fansedu_datasource.dart';
 import 'package:fansedu/data/datasource/fansedu_datasource_impl.dart';
 import 'package:fansedu/data/repositories/fansedu_repository_impl.dart';
 import 'package:fansedu/domain/repository/fansedu_repository.dart';
+import 'package:fansedu/domain/usecase/do_change_password.dart';
+import 'package:fansedu/domain/usecase/do_delete_account.dart';
 import 'package:fansedu/domain/usecase/do_login.dart';
 import 'package:fansedu/domain/usecase/do_logout.dart';
 import 'package:fansedu/domain/usecase/do_register.dart';
 import 'package:fansedu/domain/usecase/do_reset_password.dart';
+import 'package:fansedu/domain/usecase/do_update_profile.dart';
 import 'package:fansedu/domain/usecase/get_profile.dart';
+import 'package:fansedu/domain/usecase/get_references.dart';
+import 'package:fansedu/features/about/bloc/about_bloc.dart';
 import 'package:fansedu/features/auth/bloc/auth_bloc.dart';
 import 'package:fansedu/features/profile/bloc/profile_bloc.dart';
+import 'package:fansedu/features/profile/bloc/update_profile_bloc.dart';
 import 'package:fansedu/generated/l10n.dart';
 import 'package:alice/alice.dart';
 import 'package:flutter/services.dart';
@@ -69,8 +75,14 @@ Future<void> init() async {
   sl.registerLazySingleton(() => DoResetPassword(sl()));
   sl.registerLazySingleton(() => DoLogout(sl()));
   sl.registerLazySingleton(() => GetProfile(sl()));
+  sl.registerLazySingleton(() => GetReferences(sl()));
+  sl.registerLazySingleton(() => DoChangePassword(sl()));
+  sl.registerLazySingleton(() => DoDeleteAccount(sl()));
+  sl.registerLazySingleton(() => DoUpdateProfile(sl()));
 
   // bloc
-  sl.registerLazySingleton(() => AuthBloc(doLogin: sl()));
-  sl.registerLazySingleton(() => ProfileBloc(getProfile: sl()));
+  sl.registerLazySingleton(() => AuthBloc(doLogin: sl(), doResetPassword: sl(), doRegister: sl()));
+  sl.registerLazySingleton(() => ProfileBloc(getProfile: sl(), doLogout: sl()));
+  sl.registerLazySingleton(() => AboutBloc(getReferences: sl()));
+  sl.registerLazySingleton(() => UpdateProfileBloc(doChangePassword: sl(), doDeleteAccount: sl(), doUpdateProfile: sl()));
 }

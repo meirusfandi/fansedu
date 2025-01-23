@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:fansedu/domain/entity/profile_entity.dart';
 import 'package:fansedu/features/about/pages/about_page.dart';
 import 'package:fansedu/features/about/pages/help_center_page.dart';
 import 'package:fansedu/features/about/pages/privacy_policy.dart';
@@ -24,6 +25,7 @@ import 'package:fansedu/features/profile/pages/delete_account_page.dart';
 import 'package:fansedu/features/profile/pages/edit_profile_page.dart';
 import 'package:fansedu/features/profile/pages/profile_page.dart';
 import 'package:fansedu/features/profile/pages/security_page.dart';
+import 'package:flutter/material.dart';
 
 part 'router.gr.dart';
 

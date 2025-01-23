@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:fansedu/core/helpers/secure_storage/storage_helpers.dart';
+import 'package:fansedu/domain/entity/profile_entity.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:fansedu/core/config/model/info_item.dart';
@@ -18,7 +18,8 @@ import 'package:intl/intl.dart';
 
 @RoutePage()
 class EditProfilePage extends StatefulWidget {
-  const EditProfilePage({super.key});
+  final DataProfileEntity profileEntity;
+  const EditProfilePage({super.key, required this.profileEntity});
 
   @override
   State<StatefulWidget> createState() => _EditProfilePageState();
@@ -47,13 +48,21 @@ class _EditProfilePageState extends State<EditProfilePage> {
 
   @override
   void initState() {
-    setEmail();
+    initialCondition();
     super.initState();
   }
 
-  void setEmail() async {
-    final email = await storage.getEmail ?? '';
-    _emailController.text = email;
+  void initialCondition() async {
+    if (widget.profileEntity.user_id.isNotEmpty) {
+      _nameController.text = widget.profileEntity.full_name;
+      _emailController.text = widget.profileEntity.email;
+      _addressController.text = widget.profileEntity.address;
+      _dobController.text = widget.profileEntity.date_of_birth;
+      _institutionController.text = widget.profileEntity.institution_name;
+      _gradeController.text = widget.profileEntity.grade;
+      _genderController.text = widget.profileEntity.gender;
+      _phoneController.text = widget.profileEntity.phone_number;
+    }
   }
 
   @override

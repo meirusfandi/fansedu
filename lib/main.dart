@@ -10,8 +10,10 @@ import 'package:fansedu/core/helpers/firebase/remote_config.dart';
 import 'package:fansedu/core/helpers/prefs/pref_helpers.dart';
 import 'package:fansedu/core/helpers/prefs/prefs_key_helpers.dart';
 import 'package:fansedu/core/routes/router.dart';
+import 'package:fansedu/features/about/bloc/about_bloc.dart';
 import 'package:fansedu/features/auth/bloc/auth_bloc.dart';
 import 'package:fansedu/features/profile/bloc/profile_bloc.dart';
+import 'package:fansedu/features/profile/bloc/update_profile_bloc.dart';
 import 'package:fansedu/generated/l10n.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -112,7 +114,9 @@ class _MyAppState extends State<MyApp> {
     return MultiBlocProvider(providers: [
       BlocProvider<AuthBloc>(
           create: (BuildContext context) => injector.sl<AuthBloc>()),
-      BlocProvider<ProfileBloc>(create: (BuildContext context) => injector.sl<ProfileBloc>())
+      BlocProvider<ProfileBloc>(create: (BuildContext context) => injector.sl<ProfileBloc>()),
+      BlocProvider<AboutBloc>(create: (BuildContext context) => injector.sl<AboutBloc>()),
+      BlocProvider<UpdateProfileBloc>(create: (BuildContext context) => injector.sl<UpdateProfileBloc>())
     ], child: app);
   }
 }

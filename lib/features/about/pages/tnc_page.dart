@@ -1,6 +1,10 @@
 import 'package:auto_route/annotations.dart';
+import 'package:fansedu/core/resources/injection_container.dart';
 import 'package:fansedu/core/widgets/container_widget.dart';
+import 'package:fansedu/features/about/bloc/about_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
 @RoutePage()
 class TncPage extends StatefulWidget {
@@ -12,11 +16,34 @@ class TncPage extends StatefulWidget {
 
 class _TncPageState extends State<TncPage> {
   @override
+  void initState() {
+    sl<AboutBloc>().add(GetReferenceEvent('terms-and-use'));
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Loadable(
-      backgroundColor: Colors.white,
-      appBar: BackAppBar(context, "TnC", elevation: 0.0, backgroundColor: Colors.white,),
-      child: SafeArea(child: SingleChildScrollView()),
+    return BlocBuilder<AboutBloc, AboutState>(
+      builder: (context, state) {
+        return Loadable(
+          loading: state.isLoading,
+          backgroundColor: Colors.white,
+          appBar: BackAppBar(context, "TnC", elevation: 0.0, backgroundColor: Colors.white,),
+          child: SafeArea(
+            child: SingleChildScrollView(
+              child: LeftAlignedColumn(
+                children: [
+                  HtmlWidget(
+                    '''
+                    ${state.referencesEntity?.data.firstOrNull?.content_id}
+                    '''
+                  )
+                ],
+              ).horizontalPadded(24),
+            )
+          ),
+        );
+      }
     );
   }
 }

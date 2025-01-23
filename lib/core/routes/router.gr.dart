@@ -64,9 +64,13 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     EditProfileRoute.name: (routeData) {
+      final args = routeData.argsAs<EditProfileRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const EditProfilePage(),
+        child: EditProfilePage(
+          key: args.key,
+          profileEntity: args.profileEntity,
+        ),
       );
     },
     ForceUpdateRoute.name: (routeData) {
@@ -282,16 +286,40 @@ class DeleteAccountRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [EditProfilePage]
-class EditProfileRoute extends PageRouteInfo<void> {
-  const EditProfileRoute({List<PageRouteInfo>? children})
-      : super(
+class EditProfileRoute extends PageRouteInfo<EditProfileRouteArgs> {
+  EditProfileRoute({
+    Key? key,
+    required DataProfileEntity profileEntity,
+    List<PageRouteInfo>? children,
+  }) : super(
           EditProfileRoute.name,
+          args: EditProfileRouteArgs(
+            key: key,
+            profileEntity: profileEntity,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'EditProfileRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<EditProfileRouteArgs> page =
+      PageInfo<EditProfileRouteArgs>(name);
+}
+
+class EditProfileRouteArgs {
+  const EditProfileRouteArgs({
+    this.key,
+    required this.profileEntity,
+  });
+
+  final Key? key;
+
+  final DataProfileEntity profileEntity;
+
+  @override
+  String toString() {
+    return 'EditProfileRouteArgs{key: $key, profileEntity: $profileEntity}';
+  }
 }
 
 /// generated route for

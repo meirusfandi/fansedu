@@ -23,6 +23,22 @@ class RegisterFailure extends Failure {
   RegisterFailure({this.exception, this.otherException, this.errorResponse});
 }
 
+class AboutFailure extends Failure {
+  final DioException? exception;
+  final String? otherException;
+  final ErrorResponse? errorResponse;
+
+  AboutFailure({this.exception, this.otherException, this.errorResponse});
+}
+
+class ResetPasswordFailure extends Failure {
+  final DioException? exception;
+  final String? otherException;
+  final ErrorResponse? errorResponse;
+
+  ResetPasswordFailure({this.exception, this.otherException, this.errorResponse});
+}
+
 class ProfileFailure extends Failure {
   final DioException? exception;
   final String? otherException;

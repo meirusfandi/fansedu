@@ -24,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  bool seePassword = true;
+  bool seePassword = false;
 
   bool checkCondition() {
     return _emailController.text.isNotEmpty && _passwordController.text.isNotEmpty;
@@ -36,6 +36,7 @@ class _LoginPageState extends State<LoginPage> {
       listener: (context, state) {
         if (!state.isLoading && state.loginEntity != null) {
           if (state.loginEntity?.success ?? false) {
+            showSuccess(context, state.loginEntity?.message ?? '');
             context.router.replaceAll([HomeRoute()]);
           } else {
             showError(context, state.errorMessage);
@@ -92,6 +93,12 @@ class _LoginPageState extends State<LoginPage> {
                       labelText: "Email Here",
                       hintText: "youremail@gmail.com",
                       controller: _emailController,
+                      validator: (val) {
+                        if (val?.isEmpty ?? false) {
+                          return "Email must be filled";
+                        }
+                        return null;
+                      },
                       onChanged: (_) { setState(() {}); },
                       type: TextFieldType.email
                   ).horizontalPadded(24).verticalPadded(8),
@@ -101,7 +108,13 @@ class _LoginPageState extends State<LoginPage> {
                     controller: _passwordController,
                     onChanged: (_) { setState(() {}); },
                     type: TextFieldType.password,
-                    isObscureText: seePassword,
+                    isObscureText: !seePassword,
+                    validator: (val) {
+                      if (val?.isEmpty ?? false) {
+                        return "Password must be filled";
+                      }
+                      return null;
+                    },
                     suffixIcon: IconButton(
                       onPressed: () {
                         setState(() {
